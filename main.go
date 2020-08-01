@@ -1,9 +1,14 @@
 package main
 
-import "light-gin/router"
+import (
+	"github.com/gin-gonic/gin"
+	"light-gin/router"
+)
 
 func main()  {
-	app := router.InitRouter()
+	app := gin.Default()
+
+	router.InitRouter(app)
 
 	app.Run()
 }
